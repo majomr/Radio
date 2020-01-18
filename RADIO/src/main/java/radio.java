@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Maria José
+ * @author Maria José y Marisa Montoya
  */
 public class radio {
     
