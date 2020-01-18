@@ -3,7 +3,7 @@ Maria Isabel Montoya Valladares
 Maria Jose Morales
 Hoja de Trabajo 1
 Algoritmos y estructura de datos
-Clase: interfaz de radio 
+Clase: interfaz de radio
 */
 public interface radioInterfaz{
     String estacionActual();// Devuelve la estacion actual de la radio
