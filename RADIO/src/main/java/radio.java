@@ -24,7 +24,12 @@ abstract class radio implements radioInterfaz {
         
     }
     public String estacionActual(){
-        return "";
+        if(frecuencia.equalsIgnoreCase("AM")){
+            return "Estado de la radio:\n"+ estado + "\nFrecuencia:\n"+ frecuencia+"Emisora actual:\n"+emisoraAM;
+        }
+        else{
+            return "Estado de la radio:\n"+ estado + "\nFrecuencia:\n"+ frecuencia+"Emisora actual:\n"+emisoraFM;
+        }
     }
     
     public boolean estado(){
@@ -69,10 +74,20 @@ abstract class radio implements radioInterfaz {
     }
     
     public void guardar(int boton){
-        
+        if(frecuencia.equalsIgnoreCase("AM")){
+            AM[boton--] = emisoraAM;
+        }
+        else{
+            FM[boton--] = emisoraFM;
+        }
     }
     
     public void seleccionarEmisora(int boton){
-        
+        if(frecuencia.equalsIgnoreCase("AM")){
+            emisoraAM = AM[boton--];
+        }
+        else{
+            emisoraFM = FM[boton--];
+        }
     }
 }
