@@ -11,21 +11,68 @@ Hoja de Trabajo 1
 Algoritmos y Estructuras de Datos
 Clase: radio
  */
-public class radio implements radioInterfaz {
+abstract class radio implements radioInterfaz {
     // Se definen las variables de la clase
-    private String estado;
-    private String frecuencia;
-    private float emisoraAM;
-    private float emisoraFM;
-    //MAJO no me recuerdo si habiamos dicho que float o string al final amix
-    private float[] AM;
-    private float[] FM;
+    private String estado = "encendida";
+    private String frecuencia = "AM";
+    private double emisoraAM = 530;
+    private double emisoraFM = 87.9;
+    private double[] AM;
+    private double[] FM;
     
-    public String estacionActual(){
-        return "hola";
+    public radio(){
         
     }
-    public void guardar(){
+    public String estacionActual(){
+        return "";
+    }
+    
+    public boolean estado(){
+        if (estado.equalsIgnoreCase("encendida")){
+            return true;
+        }
+        else{
+            return false; 
+        } 
+    }
+    
+    public void onOff(){
+        if (estado.equalsIgnoreCase("encendida")){
+            estado = "apagada";
+        }
+        else{
+            estado = "encendida"; 
+        }
+    }
+    
+    public void cambiarFrecuencia(){
+        if (frecuencia.equalsIgnoreCase("AM")){
+            frecuencia = "FM";
+        }
+        else{
+            frecuencia = "AM"; 
+        }
+        
+    }
+    
+    public void avanzar(){
+        if(frecuencia.equalsIgnoreCase("AM")){
+            if (emisoraAM == 1610)
+                emisoraAM = 530;
+            emisoraAM = emisoraAM + 10; 
+        }
+        else{
+            if(emisoraFM == 107.9)
+                emisoraFM = 87.9;
+            emisoraFM = emisoraFM + 0.2; 
+        }
+    }
+    
+    public void guardar(int boton){
+        
+    }
+    
+    public void seleccionarEmisora(int boton){
         
     }
 }
