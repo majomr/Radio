@@ -14,14 +14,29 @@ Clase: Main
 import.util.Scanner;
 public class main {
     public static void main(String[]args){
+        radio miRadio = new radio(); 
         Scanner scan = new Scanner (System.in);
         System.out.println("Bienvenido a su radio");
-        System.out.println("Opciones: \n 1. Encender \n 2. Cambiar de AM a FM a AM \n 3. Avanzar en el dial \n 4. Guardar Emisora \n 5. Seleccionar emisora \n 6. Apagar");
+        System.out.println("Opciones: \n 1. Encender \n 2. Cambiar de AM a FM a AM \n 3. Avanzar en dial \n 4. Guardar Emisora \n 5. Seleccionar emisora \n 6. Apagar");
         System.out.println("Ingrese su opcion:");
-        int op = scan.next.Int();
+        int op = scan.nextInt();
         if (op==1){
-                
-                
-    }
-    
+            
+        }
+        else if (op==2){
+            
+        }
+        else if (op==3){
+            
+        }
+        else if (op==4){
+            
+        }
+        else if (op==5){
+            
+        }
+        else if (op==6){
+            
+        }           
+    } 
 }
