@@ -11,7 +11,7 @@ Hoja de Trabajo 1
 Algoritmos y Estructuras de Datos
 Clase: radio
  */
-abstract class radio implements radioInterfaz {
+class radio implements radioInterfaz {
     // Se definen las variables de la clase
     private String estado = "encendida";
     private String frecuencia = "AM";
@@ -21,14 +21,19 @@ abstract class radio implements radioInterfaz {
     private double[] FM;
     
     public radio(){
-        
+        AM = new double [12];
+		FM = new double [12];
+		for(int i =0;i<12; i++){
+			AM[i] = 530 + (i*10.0);
+			FM[i] = 87.9 + (i*0.2);
+		}
     }
     public String estacionActual(){
         if(frecuencia.equalsIgnoreCase("AM")){
-            return "Estado de la radio:\n"+ estado + "\nFrecuencia:\n"+ frecuencia+"Emisora actual:\n"+emisoraAM;
+            return "\nEstado de la radio:\n"+ estado + "\nFrecuencia:\n"+ frecuencia+"\nEmisora actual:\n"+emisoraAM;
         }
         else{
-            return "Estado de la radio:\n"+ estado + "\nFrecuencia:\n"+ frecuencia+"Emisora actual:\n"+emisoraFM;
+            return "\nEstado de la radio:\n"+ estado + "\nFrecuencia:\n"+ frecuencia+"\nEmisora actual:\n"+emisoraFM;
         }
     }
     

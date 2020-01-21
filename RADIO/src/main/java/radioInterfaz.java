@@ -12,6 +12,6 @@ public interface radioInterfaz{
     void cambiarFrecuencia();//Cambia la frecuencia de AM a FM a AM
     void avanzar();//Avanza a lo largo del dial, ya sea en AM (de 10 en 10) o en FM (de 0.2 en 0.2)
     void guardar(int boton);// guarda la estacion en la que se encuentra la radio
-    void seleccionarEstacion(int boton);//Seleciona una emisora guardada
+    void seleccionarEmisora(int boton);//Seleciona una emisora guardada
     
 }
