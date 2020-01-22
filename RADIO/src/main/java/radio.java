@@ -21,6 +21,7 @@ class radio implements radioInterfaz {
     private double[] FM;
     
     public radio(){
+        //Se inician los arrays para poder trabajar con ellos 
         AM = new double [12];
 		FM = new double [12];
 		for(int i =0;i<12; i++){
@@ -29,6 +30,7 @@ class radio implements radioInterfaz {
 		}
     }
     public String estacionActual(){
+        //Muestra toda la informacion del estado de la radio dependiendo de en que frecuencia se encuentre es la estacion que se muestra 
         if(frecuencia.equalsIgnoreCase("AM")){
             return "\nEstado de la radio:\n"+ estado + "\nFrecuencia:\n"+ frecuencia+"\nEmisora actual:\n"+emisoraAM;
         }
@@ -38,6 +40,7 @@ class radio implements radioInterfaz {
     }
     
     public boolean estado(){
+        //devuelve true si la radio esta encendida y viceversa 
         if (estado.equalsIgnoreCase("encendida")){
             return true;
         }
@@ -47,6 +50,7 @@ class radio implements radioInterfaz {
     }
     
     public void onOff(){
+        //dependiendo del estado actual de la radio la enciende o la apaga
         if (estado.equalsIgnoreCase("encendida")){
             estado = "apagada";
         }
@@ -56,6 +60,7 @@ class radio implements radioInterfaz {
     }
     
     public void cambiarFrecuencia(){
+        //cambia la frecuencia
         if (frecuencia.equalsIgnoreCase("AM")){
             frecuencia = "FM";
         }
@@ -66,6 +71,7 @@ class radio implements radioInterfaz {
     }
     
     public void avanzar(){
+        //dependiendo de la frecuencia se cambia de estacion una posicion 
         if(frecuencia.equalsIgnoreCase("AM")){
             if (emisoraAM == 1610)
                 emisoraAM = 530;
@@ -79,6 +85,7 @@ class radio implements radioInterfaz {
     }
     
     public void guardar(int boton){
+        //guarda la emisora actual en el boton especificado 
         if(frecuencia.equalsIgnoreCase("AM")){
             AM[boton--] = emisoraAM;
         }
@@ -88,6 +95,7 @@ class radio implements radioInterfaz {
     }
     
     public void seleccionarEmisora(int boton){
+        //dependiendo del boton seleccionado por el usuario se cambia la estacion actual 
         if(frecuencia.equalsIgnoreCase("AM")){
             emisoraAM = AM[boton--];
         }
