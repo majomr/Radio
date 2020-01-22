@@ -23,8 +23,15 @@ public class main {
             System.out.println("Ingrese su opcion:");
             int op = scan.nextInt();
             if (op==1){
-                miRadio.onOff();
-                System.out.println(miRadio.estacionActual());
+                //guarda el estado de la radio
+                boolean ea = miRadio.estado();
+                //si ya esta encendida da un aviso
+                if(ea==true)
+                    System.out.println("La radio ya esta encendida.");
+                else{
+                    miRadio.onOff();
+                    System.out.println(miRadio.estacionActual());
+                }
             }
             else if (op==2){
                 miRadio.cambiarFrecuencia();
@@ -35,12 +42,19 @@ public class main {
                 System.out.println(miRadio.estacionActual());                
             }
             else if (op==4){
+                //pide el boton en el que desea guardar la estacion 
                 System.out.println("En que numero (de 1 a 12)desea guardar la emisora actual?");
                 int boton = scan.nextInt();
-                miRadio.guardar(boton);
-                System.out.println("Su estación ha sido guardada");
+                if((boton<1) && (boton>12)){
+                    System.out.println("El valor ingresado es invalido");
+                }
+                else{
+                    miRadio.guardar(boton);
+                    System.out.println("Su estacion ha sido guardada");
+                }   
             }
             else if (op==5){
+                //pide el boton que desea seleccionar para escuchar 
                 System.out.println("Que numero de emisora desea escuchar (de 1 a 12)");
                 int boton = scan.nextInt();
                 if((boton<1) && (boton>12)){
@@ -52,12 +66,19 @@ public class main {
                 }
             }
             else if (op==6){
-                miRadio.onOff();
-                System.out.println(miRadio.estacionActual());
+                //guarda el estado de la radio
+                boolean ea = miRadio.estado();
+                //si la radio ya esta apagada da un aviso 
+                if(ea==false)
+                    System.out.println("La radio ya esta apagada.");
+                else{
+                    miRadio.onOff();
+                    System.out.println(miRadio.estacionActual());
+                }
             }  
             System.out.println("\nDesea regresar al menu de opciones o salir?\n 1. Regresar \n 2. Salir\n Ingresar en numeros su eleccion:");
             w=scan.nextInt();
         }
-        System.out.println("Que tenga un buen dia y no vaya olvidar su telefono ;)");
+        System.out.println("Que tenga un buen dia y no vaya olvidar a su telefono ;)");
     } 
 }
